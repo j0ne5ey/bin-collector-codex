@@ -10,7 +10,7 @@ Provide a single-purpose mobile experience that tells the resident which bins ar
 |---|---|---|
 | FR-01 | Automatically retrieve collection data for a configured Scottish Borders address. | Scheduled GitHub Action uses the SBC Bartec calendar and private postcode/UPRN secrets. |
 | FR-02 | Show the next collection day and date prominently. | Primary dark collection card. |
-| FR-03 | Show the following collection with meaningful emphasis. | Larger secondary card with gold accent and icon tile. |
+| FR-03 | Show the following collection with meaningful emphasis. | Larger secondary card with brand-blue accent and icon tile. |
 | FR-04 | Remove a collection after midday on its collection day. | Council-time filtering in `lib/schedule.mjs`. |
 | FR-05 | Refresh with a pull gesture. | Touch gesture uses down, up, and rotating refresh symbols. |
 | FR-06 | Provide an always-visible conventional refresh control near the bottom. | Footer refresh button remains inside the app’s minimum viewport layout. |
@@ -32,4 +32,4 @@ Provide a single-purpose mobile experience that tells the resident which bins ar
 - `SBC_POSTCODE`: the user’s actual postcode.
 - `SBC_UPRN`: the confirmed neighbour UPRN whose council record has complete data.
 
-The historic design handoff is not present in this workspace. The current visual system therefore implements the described full lockup, icon tiles, and subtle waste/recycling backdrop as original project artwork rather than claiming to reproduce unavailable geometry.
+The supplied logo handoff is implemented using its exact two-path SVG geometry, OKLCH colour values, compact Space Grotesk wordmark, icon-tile treatments, and 5% corner-watermark specification.

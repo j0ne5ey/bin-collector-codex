@@ -18,8 +18,8 @@ const binStyles = {
   general: { colour: "#79837f", ink: "#ffffff" },
   food: { colour: "#7eae6d", ink: "#163823" },
   garden: { colour: "#79a65f", ink: "#163823" },
-  glass: { colour: "#7bb7a4", ink: "#153c34" },
-  default: { colour: "#e6b648", ink: "#153c34" }
+  glass: { colour: "#83a8d8", ink: "#26303d" },
+  default: { colour: "oklch(0.5 0.11 250)", ink: "#ffffff" }
 };
 
 let refreshing = false;

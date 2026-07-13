@@ -1,4 +1,4 @@
-const CACHE = "border-bin-day-v1";
+const CACHE = "bin-collection-v2";
 const APP_SHELL = [
   "./",
   "./index.html",

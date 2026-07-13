@@ -1,6 +1,6 @@
-# Border Bin Day
+# Bin Collection
 
-Border Bin Day is an installable, mobile-first web app that shows the next two household bin collection days for one Scottish Borders address. It is designed for GitHub Pages and updates itself from the Scottish Borders Council collection calendar.
+Bin Collection is an installable, mobile-first web app that shows the next two household bin collection days for one Scottish Borders address. It is designed for GitHub Pages and updates itself from the Scottish Borders Council collection calendar.
 
 ## What it does
 

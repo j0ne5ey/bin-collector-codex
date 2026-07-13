@@ -4,6 +4,15 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-07-13
+
+### Changed
+
+- Replaced the provisional branding with the supplied high-fidelity Bin Collection logo.
+- Applied the specified Space Grotesk wordmark, OKLCH palette, compact header lockup, and 5% corner watermark.
+- Regenerated the favicon, Apple touch icon, standard PWA icons, and maskable icon from the supplied vector geometry.
+- Bumped the offline app-shell cache so installed copies receive the new identity immediately.
+
 ## [1.0.0] - 2026-07-13
 
 ### Added
