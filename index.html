@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#153c34">
+    <meta name="description" content="See your next two Scottish Borders bin collections at a glance.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Bin Day">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <title>Border Bin Day</title>
+  </head>
+  <body>
+    <div class="backdrop" aria-hidden="true">
+      <svg viewBox="0 0 420 840" preserveAspectRatio="xMidYMid slice">
+        <g fill="none" stroke="currentColor" stroke-linecap="round">
+          <path d="M84 186c58-64 155-74 226-17" />
+          <path d="m286 132 30 42-48 12" />
+          <path d="M327 292c30 81-12 173-91 207" />
+          <path d="m271 498-50 7 9-49" />
+          <path d="M141 500c-83-28-131-112-111-197" />
+          <path d="m29 315 8-50 47 19" />
+          <path d="M97 653c54-32 119-35 176-8" />
+          <circle cx="324" cy="650" r="31" />
+          <path d="m312 650 9 9 17-19" />
+        </g>
+      </svg>
+    </div>
+
+    <div id="pull-indicator" class="pull-indicator" aria-hidden="true">
+      <span id="pull-icon">↓</span>
+      <span id="pull-label">Pull to refresh</span>
+    </div>
+
+    <main class="app-shell">
+      <header class="brand" aria-label="Border Bin Day">
+        <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="Circular bin day symbol">
+          <path d="M17 21a20 20 0 0 1 31-5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+          <path d="m45 10 5 8-9 2" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M47 43a20 20 0 0 1-31 5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+          <path d="m19 54-5-8 9-2" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M24 26h17l-2 20H26zM22 22h21M28 18h9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <p class="eyebrow">Scottish Borders</p>
+          <h1>Bin Day</h1>
+        </div>
+      </header>
+
+      <section id="status" class="status" aria-live="polite">
+        <span class="status-dot"></span>
+        <span id="status-text">Checking schedule…</span>
+      </section>
+
+      <section id="collections" class="collections" aria-busy="true">
+        <article class="collection-card imminent skeleton" aria-hidden="true"></article>
+        <article class="collection-card then skeleton" aria-hidden="true"></article>
+      </section>
+
+      <section id="setup" class="setup-panel" hidden>
+        <span class="setup-icon" aria-hidden="true">⌁</span>
+        <h2>Connect your address</h2>
+        <p>Add the repository secrets <code>SBC_POSTCODE</code> and <code>SBC_UPRN</code>, then run the “Update collections” workflow.</p>
+      </section>
+
+      <footer>
+        <button id="refresh-button" class="refresh-button" type="button">
+          <span class="refresh-symbol" aria-hidden="true">↻</span>
+          <span>Refresh collections</span>
+        </button>
+        <p id="updated-at" class="updated-at"></p>
+        <p class="disclaimer">Independent helper using collection information published by Scottish Borders Council.</p>
+      </footer>
+    </main>
+
+    <template id="collection-template">
+      <article class="collection-card">
+        <div class="card-heading">
+          <div>
+            <p class="card-kicker"></p>
+            <h2 class="relative-date"></h2>
+          </div>
+          <p class="calendar-date"></p>
+        </div>
+        <div class="bin-list"></div>
+      </article>
+    </template>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
