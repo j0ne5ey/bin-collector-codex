@@ -24,6 +24,7 @@ Resident's phone
 - `app.js` renders the two collection days and controls refresh interactions.
 - `service-worker.js` caches the app shell and treats the collection JSON as network-first data.
 - GitHub Actions update the schedule, protect scheduled activity, test the code, and deploy the static site.
+- A successful updater run directly triggers the Pages workflow because commits pushed with GitHub's workflow token do not trigger another `push` workflow.
 
 ## Failure behaviour
 

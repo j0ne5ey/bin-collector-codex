@@ -7,6 +7,7 @@ All notable changes to this project are documented here. The format follows [Kee
 ### Fixed
 
 - Preserve SBC collection dates in the `Europe/London` time zone instead of shifting every BST event to the preceding UTC date.
+- Deploy schedule commits produced by the updater, which do not emit a second GitHub Actions `push` event.
 
 ## [1.0.1] - 2026-07-13
 
