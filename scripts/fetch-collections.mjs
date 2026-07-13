@@ -1,6 +1,7 @@
 import { chromium } from "playwright";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { normaliseEvent } from "../lib/collection-data.mjs";
 
 const CALENDAR_URL = "https://scotborders-live-portal.bartecmunicipal.com/Embeddable/CollectionCalendar";
 const outputPath = path.resolve(process.env.OUTPUT_PATH || "data/collections.json");
@@ -11,31 +12,6 @@ if (!postcode || !uprn) {
   throw new Error("SBC_POSTCODE and SBC_UPRN are required.");
 }
 if (!/^\d+$/.test(uprn)) throw new Error("SBC_UPRN must contain digits only.");
-
-function normaliseType(name = "") {
-  const value = name.toLowerCase();
-  if (/recycl|blue/.test(value)) return "recycling";
-  if (/general|residual|refuse|grey|gray/.test(value)) return "general";
-  if (/food/.test(value)) return "food";
-  if (/garden|green waste/.test(value)) return "garden";
-  if (/glass/.test(value)) return "glass";
-  return "default";
-}
-
-function dateKey(value) {
-  if (!value) return null;
-  const match = String(value).match(/^(\d{4}-\d{2}-\d{2})/);
-  if (match) return match[1];
-  const date = new Date(value);
-  return Number.isNaN(date.valueOf()) ? null : date.toISOString().slice(0, 10);
-}
-
-function normaliseEvent(event) {
-  const name = event.Subject || event.subject || event.FriendlyName || event.FeatureTypeName || event.ServiceName || event.title;
-  const date = dateKey(event.StartTime || event.startTime || event.Start || event.start || event.CollectionDate || event.date);
-  if (!name || !date) return null;
-  return { date, name: String(name).trim(), type: normaliseType(name) };
-}
 
 async function existingCollections() {
   try { return JSON.parse(await readFile(outputPath, "utf8")); }
