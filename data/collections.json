@@ -1,13 +1,8 @@
 {
   "configured": true,
-  "updatedAt": "2026-07-13T20:19:58.066Z",
+  "updatedAt": "2026-07-14T03:38:17.445Z",
   "source": "Scottish Borders Council via Bartec Municipal",
   "collections": [
-    {
-      "date": "2026-07-13",
-      "name": "Food",
-      "type": "food"
-    },
     {
       "date": "2026-07-14",
       "name": "Recycling",
