@@ -1,13 +1,8 @@
 {
   "configured": true,
-  "updatedAt": "2026-08-21T18:58:54.522Z",
+  "updatedAt": "2026-08-22T01:52:30.522Z",
   "source": "Scottish Borders Council via Bartec Municipal",
   "collections": [
-    {
-      "date": "2026-08-21",
-      "name": "General Waste",
-      "type": "general"
-    },
     {
       "date": "2026-08-24",
       "name": "Food",
